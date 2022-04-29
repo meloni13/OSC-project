@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&family=Press+Start+2P&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(image2.jpg);
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding: 30px;
+}
+:root{
+    --box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.1);
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color:#666;
+}
+.flex-horizontal{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-horizontal .input-box{
+    margin: 0 40px;  
+}
+.flex-horizontal .input-box input{
+    width: 250px;
+}
+.flex-horizontal .input-box select{
+    width: 200px;
+}
+.input-box .stars{
+    display: flex;
+    
+}
+fieldset{
+    outline: none;
+}
+.rating{
+    border: none;
+}
+.rating > input{
+    display: none;
+}
+.rating > label:before{
+    content: '\f005';
+    font-family: FontAwesome;
+    margin: 5px;
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+.rating > .half:before{
+    content: '\f089';
+    position: absolute;
+    cursor: pointer;
+}
+.center{
+    width: 170px;
+}
+.rating > label{
+    color: #ddd;
+    float: right;
+    cursor: pointer;
+}
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label{
+    color: #2ce679;
+
+}
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label{
+    color: #2ddc76;
+}
+
+
+.input-box .stars li{
+    padding: 0 5px;
+    margin: 0 0px;
+    font-size: 1.6rem   ;
+    list-style: none;
+    border: #27ae60;
+    color: var(--light-color);
+    background: none;
+}
+.container{
+    display: flex;
+    position: relative;
+    padding: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+ 
+}
+.container .form-content h1{
+    color: var(--light-color);
+}
+.container .form-content .input-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 0;
+}
+.container .form-content .input-boxes{
+    position: relative;
+}
+.container .form-content .input-box .text{
+font-size: 1.2rem;
+font-weight: 500;
+padding: 5px 0;
+color: #27ae60;
+}
+.container .form-content .input-box input{
+    height: 40px;
+    padding: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.container .form-content .input-box input:focus{
+    border-color: #27ae60;
+}
+.hide{
+    display: none;
+}
+/* .container .form-content .camera{
+    position: absolute;
+} */
+.container .form-content .camera video{
+    width: 400px;
+    height: 320px;
+}
+.camera-placement{
+    position: absolute;
+    top: 0;
+}
+.container .form-content .submit{
+    text-align: center;
+    padding: 10px;
+}
+.container .form-content .submit input{
+    width: 250px;
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: 500;
+    background: none;
+    border-color: var(--green);
+    transition: all 0.3s ease;
+}
+
+
+.container .form-content .submit input:hover{
+    background-color: #27ae60;
+    color: white;
+}
+.container .input-boxes .category{
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+}
+.container .input-boxes select:focus{
+    border: none;
+}
+.container .input-boxes .button-section
+{
+    display: flex;
+    
+}
+.container .input-boxes .button-section button{
+    background: none;
+    font-size: 1rem;
+    padding: 5px;
+    border: #27ae60 2px solid;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.container .input-boxes .button-section button:hover{
+    background-color: #27ae60;
+    color: white;
+}
+.loader-container{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width: 20rem;
+    background: white;
+}
+
+.loader-container.fade-out{
+    bottom:110%;
+    opacity: 0;
+    z-index: -999;
+}

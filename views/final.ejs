@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dawatee Khazaane</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="final/final.css" />
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <!-- header section starts      -->
+
+    <header>
+      <a href="#" class="logo"
+        ><i class="fas fa-utensils"></i> Dawatee Khazaane</a
+      >
+
+      <nav class="navbar">
+        <a class="active" href="#home">home</a>
+        <a href="#Explore">Explore</a>
+        <a href="#review">review</a>
+        <a href="#about">about</a>
+      </nav>
+
+      <div class="right-part">
+        <div class="search">
+          <form action="/search" method="post">
+            <div class="input-box">
+              <input
+                type="text"
+                name="searchData"
+                placeholder="Search"
+                autocomplete="off"
+              />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="icons">
+          <i class="fas fa-bars" id="menu-bars"></i>
+
+          <form action="/newThelewala" method="post" class="add-new">
+            <input type="submit" class="new-thelewala" value="+" />
+          </form>
+          <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- header section ends-->
+
+    <!-- search form  -->
+
+    <form action="" id="search-form">
+      <input
+        type="search"
+        placeholder="search here..."
+        name=""
+        id="search-box"
+      />
+      <label for="search-box" class="fas fa-search"></label>
+      <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+      <div class="home-slider">
+        <div class="wrapper">
+          <div class="slide slider-1">
+            <div class="content">
+              <span></span>
+              <h3 style="font-size: 4rem;">One Plate Food Finder</h3>
+              <p style="text-transform: none;">
+                One stop solution to all your desi cravings. From Samosa's to
+                Pani-puris, we've got you covered. What are you waiting for?
+              </p>
+              <a href="#Explore" class="btn">Explore Now</a>
+            </div>
+            <div class="image">
+              <button class="left-btn change-button"><</button>
+              <img
+                src="index/img1.avif"
+                class="home-img"
+                height="200px"
+                alt=""
+              />
+              <button class="right-btn change-button">></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- dishes section starts  -->
+
+    <!-- <section class="dishes" id="dishes">
+      <h3 class="sub-heading">our dishes</h3>
+      <h1 class="heading">popular dishes</h1>
+
+      <div class="box-container">
+        <%newListItems.forEach(function(item){%>
+        <div class="box">
+          <h3><%=item.name%></h3>
+          <a href="<%= item.url%>"
+            ><button type="button" class="btn">Directions</button>
+          </a>
+          <p><%= item.url%></p>
+     </div>
+        <%})%> -->
+
+    <!-- <img src="images/dish-1.png" alt="" /> -->
+    <!-- </div>
+    </section> -->
+
+    <!-- dishes section ends -->
+
+    <!-- about section starts  -->
+
+    <!-- about section ends -->
+
+    <!-- menu section starts  -->
+
+    <section class="menu" id="Explore">
+      <h3 class="sub-heading">our menu</h3>
+      <h1 class="heading">today's speciality</h1>
+
+      <div class="box-container">
+        <%newListItems.forEach(function(item){%>
+        <div class="box">
+          <div class="image">
+            <img style="background-size: cover;" src="<%=item.image%>" alt="" />
+            <a href="#" class="fas fa-heart"></a>
+          </div>
+
+          <div class="content">
+            <h3><%=item.name%></h3>
+
+            <p>
+              Contact : +91 <%=item.number%> <br />
+              Area : <%=item.area%> <br />
+              Category : <%=item.category%> <br />
+              Ratings : <%=item.star%>
+            </p>
+            <div class="flex-horizontal">
+              <div class="flex-inside">
+                <a href="<%=item.url%>" target="_blank"
+                  ><button type="button" class="btn">Directions</button>
+                </a>
+                <form action="/addReviews" method="post">
+                  <input
+                    type="hidden"
+                    name="nameThelewala"
+                    value="<%=item.name%>"
+                  />
+                  <input
+                    type="hidden"
+                    name="thelewalaNumber"
+                    value="<%=item.number%>"
+                  />
+                  <button type="submit" class="btn">Add Reviews</button>
+                </form>
+              </div>
+              <div class="inside">
+                <form action="/liked" method="post">
+                  <input
+                    type="hidden"
+                    name="nameThelewala"
+                    value="<%=item.name%>"
+                  />
+                  <input
+                    type="hidden"
+                    name="thelewalaNumber"
+                    value="<%=item.number%>"
+                  />
+                  <button
+                    style="font-size: 2rem;"
+                    type="submit"
+                    class="heart-btn fas fa-heart"
+                  >
+                    <!-- <i class="fas fa-heart"></i> -->
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%})%>
+      </div>
+    </section>
+
+    <!-- menu section ends -->
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+      <h3 class="sub-heading">customer's review</h3>
+      <h1 class="heading">what they say</h1>
+
+      <div class="swiper-container review-slider">
+        <div class="swiper-wrapper">
+          <%reviews.forEach(function(item){%>
+          <div class="swiper-slide slide" style="height: 350px;">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="final/images/user.png" alt="" />
+              <div class="user-info">
+                <h3><%=item.name%></h3>
+              </div>
+            </div>
+
+            <div class="content">
+              <p style="min-height: 120px;">
+                <%=item.reviews%>
+              </p>
+              <p>
+                <%=item.user%>
+              </p>
+              <div class="flex-horizontal-space">
+                <a href="#" target="_blank"
+                  ><button type="button" class="btn">Directions</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <%})%>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h3 class="sub-heading">about us</h3>
+      <h1 class="heading">why choose us?</h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="images/about-img.png" alt="" />
+        </div>
+
+        <div class="content">
+          <h3>best thelewalas in the country</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+            sequi corrupti corporis quaerat voluptatem ipsam neque labore modi
+            autem, saepe numquam quod reprehenderit rem? Tempora aut soluta odio
+            corporis nihil!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+            nemo. Sit porro illo eos cumque deleniti iste alias, eum natus.
+          </p>
+          <div class="icons-container">
+            <div class="icons">
+              <i class="fas fa-mobile"></i>
+              <span>App Available</span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-search"></i>
+              <span>easy surfing</span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-headset"></i>
+              <span>24/7 service</span>
+            </div>
+          </div>
+          <a href="#" class="btn">learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- order section starts  -->
+
+    <!-- order section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>locations</h3>
+          <a href="#">Maharashtra</a>
+          <a href="#">Jaipur</a>
+          <a href="#">Gujarat</a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#">home</a>
+          <a href="#">dishes</a>
+          <a href="#">about</a>
+          <a href="#">menu</a>
+          <a href="#">reivew</a>
+          <a href="#">order</a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#">+91 8369278376</a>
+          <a href="#">khushal.dhanuka@spit.ac.in</a>
+          <a href="#">yash.jain@spit.ac.in</a>
+          <a href="#">chirag.girdhar@spit.ac.in</a>
+          <a href="#">mumbai, india - 400064</a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#">facebook</a>
+          <a href="#">twitter</a>
+          <a href="#">instagram</a>
+          <a href="#">linkedin</a>
+        </div>
+      </div>
+
+      <div class="credit">copyright @ 2022 by <span>Web Developers</span></div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader part  -->
+    <div class="loader-container">
+      <img src="final/images/loader.gif" alt="" />
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="final/script.js"></script>
+  </body>
+</html>
