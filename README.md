@@ -1,5 +1,5 @@
 # Street vendor project
-# Small Business Web Portal
+## Small Business Web Portal
 
 This project is a web portal developed to support small businesses in expanding their reach, especially in the aftermath of the COVID-19 pandemic, which had a significant impact on their operations. The platform provides a space where users can easily connect with local business owners based on factors such as reviews, proximity, operating hours, and delivery time. This helps improve visibility and accessibility for small businesses, allowing them to better serve their community.
 
@@ -38,12 +38,14 @@ To set up the project locally, follow these steps:
    git clone https://github.com/yourusername/small-business-web-portal.git
    cd small-business-web-portal
 2. **Install frontend dependencies:**
-  cd client
-  npm install
-3. **Install backend dependencies:**
-cd ../server
-npm install
-4. **Configure Firebase:**
+   ```bash
+   cd client
+   npm install
+4. **Install backend dependencies:**
+   ```bash
+   cd ../server
+   npm install
+5. **Configure Firebase:**
 - Create a Firebase project at Firebase Console.
 - Obtain your Firebase configuration details and replace it in the repo code
 5. **Run the application:**
